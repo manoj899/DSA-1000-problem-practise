@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 class Node{
@@ -17,30 +16,38 @@ class Node{
         this->data = data;
         this->next = next;
     }
-};;
+};
 
 // addlast and display
 
 void addfirst(Node*& head, Node*& tail, int data){
 
     Node* nn = new Node(data,head);
-    head = nn; 
+    head = nn;
 }
 
 void addAt(Node*& head, Node*& tail, int data,int pos){
- int j = 1;
+    int j = 1;
     for(Node* i; i->next != NULL; i = i->next){
         if(j = pos-1){
          Node* nn = new Node(data,i->next);
          i->next = nn;
          exit;
         }
-         j++;
+        j++;
     }
-    
-  
 }
 
+/*
+Node* head
+head is a copy of the pointer
+Changing it does NOT change original head
+
+Node*& head
+head is a reference to the pointer
+
+Changing it changes the original pointer
+*/
 void addlast(Node*& head, Node*& tail, int data){
 
     if(head == NULL){
